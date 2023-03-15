@@ -30,3 +30,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 [Yu Gi Oh API](https://ygoprodeck.com/api-guide/)
 <br>
 [Bootstrap 5.3](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
+<br>
+[QuickType.io](https://quicktype.io/)
