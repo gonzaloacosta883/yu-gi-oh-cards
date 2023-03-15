@@ -1,6 +1,8 @@
 <div class="container mb-5">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-5 g-3">
-        <app-card *ngFor="let card of [1,2,3,4,5,6,7,8]"></app-card>
+        <!-- Envio un output de cada iteración al componente card de nombre card.
+        El cual el componente card lo recibe por medio de un input. -->
+        <app-card *ngFor="let card of cardList" [card]="card"></app-card>
     </div>
 </div>
 

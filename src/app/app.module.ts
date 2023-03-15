@@ -8,6 +8,8 @@ import { ListCardsComponent } from './pages/list-cards/list-cards.component';
 import { DetailCardComponent } from './pages/detail-card/detail-card.component';
 import { HeaderComponent } from './components/header/header.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +20,8 @@ import { HeaderComponent } from './components/header/header.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
