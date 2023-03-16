@@ -11,6 +11,7 @@ export class ListCardsComponent {
 
 	cardService: null | CardService = null;
 	cardList: Card[] = [];
+	offset: number = 0;
 
 	constructor(cardService: CardService) {
 		this.cardService = cardService;
@@ -19,8 +20,18 @@ export class ListCardsComponent {
 	// Este metodo se ejecuta una vez generado el componente
 	// similar al documenContentLoaded en js
 	ngOnInit() {
-		this.cardService?.getListCards()?.subscribe((respuesta) => {
-			this.cardList = respuesta;
+		this.onScroll();
+	}
+
+	onScroll() {
+		this.offset += 100;
+		this.searchCards();
+	}
+
+	searchCards()
+	{
+		this.cardService?.getListCards(this.offset)?.subscribe((respuesta) => {
+			this.cardList = [...this.cardList, ...respuesta];
 		});
 	}
 
