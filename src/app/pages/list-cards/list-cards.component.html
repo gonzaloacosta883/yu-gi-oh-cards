@@ -1,6 +1,8 @@
-<app-header>
-</app-header>
 <div class="container mt-5">
+
+    <!-- formulario de busqueda -->
+    <input type="text" class="form-control my-3" placeholder="Buscar" [formControl]="inputSearchCard">
+
     <div infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="100" (scrolled)="onScroll()">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-5 g-3">
             <!-- Envio un output de cada iteración al componente card de nombre card.

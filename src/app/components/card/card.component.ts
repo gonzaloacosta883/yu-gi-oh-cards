@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { Card } from 'src/app/interfaces/card.interface';
 
 @Component({
@@ -7,5 +8,13 @@ import { Card } from 'src/app/interfaces/card.interface';
 	styleUrls: ['./card.component.css']
 })
 export class CardComponent {
+	
 	@Input() card!: Card;
+
+	constructor(private router: Router){}
+
+	show()
+	{
+		this.router.navigate([`./card/${this.card.id}`]);
+	}
 }
