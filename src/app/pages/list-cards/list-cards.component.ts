@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Card } from 'src/app/interfaces/card.interface';
 import { CardService } from 'src/app/services/card.service';
 
@@ -9,9 +9,12 @@ import { CardService } from 'src/app/services/card.service';
 })
 export class ListCardsComponent {
 
+	// @Input() cardNameSearching: string = '';
+
 	cardService: null | CardService = null;
 	cardList: Card[] = [];
 	offset: number = 0;
+	
 
 	constructor(cardService: CardService) {
 		this.cardService = cardService;
@@ -28,9 +31,9 @@ export class ListCardsComponent {
 		this.searchCards();
 	}
 
-	searchCards()
+	searchCards(cardName: string | null = null)
 	{
-		this.cardService?.getListCards(this.offset)?.subscribe((respuesta) => {
+		this.cardService?.getListCards(cardName, this.offset)?.subscribe((respuesta) => {
 			this.cardList = [...this.cardList, ...respuesta];
 		});
 	}

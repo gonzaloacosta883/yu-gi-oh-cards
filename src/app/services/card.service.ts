@@ -16,12 +16,14 @@ export class CardService {
     }
 
     // pipe = tuberia = filtro;
-    getListCards(offset: number = 0) {
+    getListCards(name: string | null, offset: number = 0) {
 
-        const params = {
+        const params: any = {
             num: 100,
             offset: offset
         };
+
+        if (name) params.fname = name;
 
         return this.httpService?.get<Card[]>(this.API_YU_GI_OH_URL, { params })
             .pipe(
